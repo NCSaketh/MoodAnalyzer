@@ -18,15 +18,22 @@ public class MoodAnalyzer {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Mood Analyzer");
-
+        System.out.println("Enter the mood");
+        String message = sc.nextLine();
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
     }
 
     public static String analyzeMood() {
-        if (message.equals("I am in Sad Mood"))
-            return ("SAD");
-        else
-            return ("HAPPY");
-
+        try {
+            if (message.equals("I am in Sad Mood"))
+                return ("SAD");
+            else
+                return ("HAPPY");
+        }
+        catch(NullPointerException e)
+        {
+           return ("Invalid mood entered!");
+        }
     }
 
 
