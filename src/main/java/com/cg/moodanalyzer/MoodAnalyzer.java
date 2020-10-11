@@ -1,9 +1,19 @@
 package com.cg.moodanalyzer;
+
 import java.util.Scanner;
 
 import java.util.Scanner;
 
 public class MoodAnalyzer {
+    public String message;
+
+    public MoodAnalyzer() {
+    }
+
+    public MoodAnalyzer(String message) {
+        this.message = message;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Mood Analyzer");
@@ -13,10 +23,10 @@ public class MoodAnalyzer {
     }
 
     public static String analyzeMood(String message) {
-        if(message.equals("I am in Sad Mood"))
-            return("SAD");
+        if (message.equals("I am in Sad Mood"))
+            return ("SAD");
         else
-            return("HAPPY");
+            return ("HAPPY");
 
     }
 
