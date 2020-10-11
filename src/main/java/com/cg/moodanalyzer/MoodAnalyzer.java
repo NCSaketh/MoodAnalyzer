@@ -8,22 +8,13 @@ public class MoodAnalyzer {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Mood Analyzer");
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        System.out.println("Enter the mood");
-        String message = sc.nextLine();
-        analyzeMood(message);
-<<<<<<< HEAD
+        System.out.println(moodAnalyzer.analyzeMood("Mood"));
+
     }
 
-    private static String analyzeMood(String message) {
-        return("Happy or Sad");
-    }
-=======
+    public static String analyzeMood(String message) {
+        return("SAD");
     }
 
-    private static String analyzeMood(String message) {
-        return("Happy or Sad");
-    }
-
->>>>>>> UC1_AnalyzeMood
 
 }
