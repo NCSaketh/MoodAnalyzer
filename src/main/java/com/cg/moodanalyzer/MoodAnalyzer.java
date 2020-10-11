@@ -8,7 +8,6 @@ public class MoodAnalyzer {
     public static String message;
 
     public MoodAnalyzer() {
-        this.message = "";
     }
 
     public MoodAnalyzer(String message) {
@@ -23,17 +22,22 @@ public class MoodAnalyzer {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
     }
 
-    public static String analyzeMood() {
+    public static String analyzeMood() throws MoodAnalysisException {
         try {
-            if (message.equals("I am in Sad Mood"))
+            if (message.length()==0) {
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
+            }
+            else if (message.contains("Sad"))
                 return ("SAD");
-            else
+            else if (message.contains("Happy"))
                 return ("HAPPY");
         }
         catch(NullPointerException e)
         {
-           return ("HAPPY");
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Please enter valid message");
         }
+
+        return ("Invalid Mood Entered");
     }
 
 
