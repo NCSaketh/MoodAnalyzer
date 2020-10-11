@@ -14,15 +14,19 @@ public class MoodAnalyzerTest {
 
     @Test
     public void givenMessage_InAnyMood_ShouldReturnHAPPY() throws MoodAnalysisException {
-        MoodAnalyzer moodAnalyser = new MoodAnalyzer("I am in Any Mood");
+        MoodAnalyzer moodAnalyser = new MoodAnalyzer("I am in Happy Mood");
         String result = MoodAnalyzer.analyzeMood();
         Assert.assertEquals("HAPPY", result);
     }
 
     @Test
-    public void givenMessage_NullMood_ShouldReturnHAPPY() throws MoodAnalysisException {
-        MoodAnalyzer moodAnalyser = new MoodAnalyzer();
-        String result = MoodAnalyzer.analyzeMood();
-        Assert.assertEquals("HAPPY", result);
+    public void givenNullMoodShouldThrowException() {
+        MoodAnalyzer moodAnalyser = new MoodAnalyzer(null);
+        try {
+            MoodAnalyzer.analyzeMood();
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL, e.type);
+        }
     }
+
 }

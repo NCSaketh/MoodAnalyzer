@@ -24,17 +24,14 @@ public class MoodAnalyzer {
 
     public static String analyzeMood() throws MoodAnalysisException {
         try {
-            if (message.length()==0) {
-                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
-            }
-            else if (message.contains("Sad"))
+            if (message.length() == 0) {
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, "Please enter valid message");
+            } else if (message.contains("Sad"))
                 return ("SAD");
             else if (message.contains("Happy"))
                 return ("HAPPY");
-        }
-        catch(NullPointerException e)
-        {
-            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL,"Please enter valid message");
+        } catch (NullPointerException e) {
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL, "Please enter valid message");
         }
 
         return ("Invalid Mood Entered");
