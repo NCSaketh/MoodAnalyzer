@@ -5,9 +5,10 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 public class MoodAnalyzer {
-    public String message;
+    public static String message;
 
     public MoodAnalyzer() {
+        this.message = "";
     }
 
     public MoodAnalyzer(String message) {
@@ -17,12 +18,10 @@ public class MoodAnalyzer {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Mood Analyzer");
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        System.out.println(moodAnalyzer.analyzeMood("Mood"));
 
     }
 
-    public static String analyzeMood(String message) {
+    public static String analyzeMood() {
         if (message.equals("I am in Sad Mood"))
             return ("SAD");
         else
